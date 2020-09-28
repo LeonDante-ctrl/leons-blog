@@ -1,3 +1,4 @@
 Werkzeug~=1.0.1
 Flask~=1.1.2
 MyApplication~=0.1.0
+WTForms~=2.3.3
