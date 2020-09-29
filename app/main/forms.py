@@ -1,12 +1,12 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextAreaField, TextField, SelectField, SubmitField
+from wtforms import StringField, TextAreaField, SelectField, SubmitField
 from wtforms.validators import DataRequired, Length
 
 
 class BlogPostForm(FlaskForm):
     title = StringField('Blog title', validators=[
         DataRequired(), Length(min=2, max=100)])
-    content = TextField('Write New Blog Here', validators=[
+    content = StringField('Write New Blog Here', validators=[
         DataRequired(), Length(min=2, max=2000)])
     category = SelectField('Category', choices=[
         ('Art', 'Art'), ('Business', 'Business'), ('Medicine', 'Medicine'), ('Music', 'Music')])
@@ -18,7 +18,7 @@ class BlogEditForm(FlaskForm):
     blog_id = StringField()
     title = StringField('Blog title', validators=[
         DataRequired(), Length(min=2, max=100)])
-    edit_content = TextField('Edit Blog', validators=[
+    edit_content = StringField('Edit Blog', validators=[
         DataRequired(), Length(min=2, max=2000)])
     category = SelectField('Category', choices=[
         ('Art', 'Art'), ('Business', 'Business'), ('Medicine', 'Medicine'), ('Music', 'Music')])
